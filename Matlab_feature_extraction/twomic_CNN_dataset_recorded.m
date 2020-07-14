@@ -1,11 +1,11 @@
 %%
 % Created by Abdullah Kucuk
-% Generates CNN dataset for two mic DOA for Recorded Data
-% Nov 16th 2018
+% Generates DNN dataset for two mic DOA for Recorded Data
+% Oct 16th 2018
 
 %%Real Imag 
 
-function [output]=twomic_CNN_dataset_recorded(noisysig,fs,L,GT);
+function [output]=twomic_DNN_dataset_recorded(noisysig,fs,L,GT);
 
 
 
@@ -43,12 +43,13 @@ for i = 1:n_F-1
 
     fft_Framex =( fft(x_frame,NFFT));
     fft_Frameh = fft(h_frame,NFFT);
-    
-  
-    imag_fft_Framex(:,i)=((imag(fft_Framex)));%
-    real_fft_Framex(:,i)=((real(fft_Framex)));%
-    imag_fft_Frameh(:,i)=(imag(fft_Frameh));%
-    real_fft_Frameh(:,i)=(real(fft_Frameh));%
+
+	
+	mag_Framex(:,i) = abs(fft_Framex);
+	mag_Frameh(:,i) = abs(fft_Frameh);
+	phase_Framex(:,i) = angle(fft_Framex);
+	phase_Frameh(:,i) = angle(fft_Frameh);
+
 
     
 
@@ -60,15 +61,15 @@ end
  %% Each CNN input is 10 frame* NFFT points image
 
  
- imag_fft_Framex=imag_fft_Framex';%
- real_fft_Framex=real_fft_Framex';%
- imag_fft_Frameh=imag_fft_Frameh';%
- real_fft_Frameh=real_fft_Frameh';%
+ mag_Framex = mag_Framex';%
+ mag_Frameh = mag_Frameh';%
+ phase_Framex = phase_Framex';%
+ phase_Frameh=phase_Frameh';%
    
  chck_val=10*floor((n_F-1)/10); % since I try to bundle 10 frames as a image for estimation, dimension should be 10x
 
  
-output=[imag_fft_Framex(1:chck_val,1:NFFT/2+1),imag_fft_Frameh(1:chck_val,1:NFFT/2+1),real_fft_Framex(1:chck_val,1:NFFT/2+1),real_fft_Frameh(1:chck_val,1:NFFT/2+1),GT(1:chck_val,:) ];
+output=[mag_Framex(1:chck_val,1:NFFT/2+1),mag_Frameh(1:chck_val,1:NFFT/2+1),phase_Framex(1:chck_val,1:NFFT/2+1),phase_Frameh(1:chck_val,1:NFFT/2+1),GT(1:chck_val,:) ];
 
  
 %  % Plot
