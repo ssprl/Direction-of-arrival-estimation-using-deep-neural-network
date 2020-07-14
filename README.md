@@ -15,7 +15,7 @@ A [User's Guide](Users-Guide-Android_TwoMicDOA_version_2.pdf) is provided descri
 
 ## Requirements 
 
-- add requirements
+- Pixel 1 smartphone and Android 9(Api 28.0.3)
 
 ## License and Citation
 
