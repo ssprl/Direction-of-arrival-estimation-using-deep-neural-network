@@ -1,2 +1,30 @@
 # Direction-of-arrival-estimation-using-deep-neural-network-for-hearing-aid-applications-using-smartphone
  
+## Overview
+
+This GitHub repository provides for Deep Neural Network based Two Microphone DOA estimation on Android smartphone platform. The example app provided here is for hearing improvement studies. 
+> **Abstract:** Deep neural network (DNN) techniques are gaining popularity due to performance boost in many applications. In this work we propose a DNN-based method for finding the direction of arrival (DOA) of speech source for hearing study improvement and hearing aid applications using popular smartphone with no external components as a cost-effective stand-alone platform. We consider the DOA estimation as a classification problem and use the magnitude and phase of speech signal as a feature set for DNN training stage and obtaining appropriate model. The model is trained and derived using real speech and real noisy speech data recorded on smartphone in different noisy environments under low signal to noise ratios (SNRs). The DNN-based DOA method with the pre-trained model is implemented and run on Android smartphone in real time. The performance of proposed method is evaluated objectively and subjectively in the both training and unseen environments. The test results are presented showing the superior performance of proposed method over conventional methods.
+
+You can find the manuscript for this GitHub repository :https://asa.scitation.org/doi/10.1121/2.0001256
+
+## Audio-Video Demo
+
+## Users Guides
+
+A [User's Guide](Users-Guide-Android_TwoMicDOA_version_2.pdf) is provided describing the real-time implementation on Android smartphone platforms.
+
+## Requirements 
+
+- add requirements
+
+## License and Citation
+
+The codes are licensed under MIT license.
+
+For any utilization of the code content of this repository, one of the following books needs to get cited by the user:
+
+A.Küçük, I. Panahi, "Direction of arrival estimation using deep neural network for hearing aid applications using smartphone", Proceedings of Meetings on Acoustics, 178 ASA. Vol. 39. No. 1. ASA, 2019. 
+
+## Disclaimer
+
+This work was supported in part by the National Institute of the Deafness and Other Communication Disorders (NIDCD) of the National Institutes of Health (NIH) under Award 1R01DC015430-04. The content is solely the responsibility of the authors and does not necessarily represent the official views of the NIH.
